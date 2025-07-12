@@ -88,7 +88,7 @@ export default function theme(mode: 'dark' | 'light' = 'light') {
         main: '#FF9F1C',
         dark: '#a4671c',
         light: '#57698C',
-        contrastText: '#395182',
+        contrastText: '#000',
       },
       text: {
         primary: '#575B64',

@@ -1,10 +1,21 @@
 import { AddShoppingCart } from "@mui/icons-material";
 import { Card, CardContent, CardMedia, Chip, IconButton, Stack, Tooltip, Typography } from "@mui/material";
+import { Dispatch, SetStateAction } from "react";
 import { IProduct } from "../../interfaces/product.interfaces";
 
-export default function ProductCard({product}: Readonly<{product: IProduct}>) {
+export default function ProductCard({
+    product, 
+    selectedProduct,
+    setSelectedProduct
+}: Readonly<{product: IProduct, selectedProduct: IProduct[] | null, setSelectedProduct: Dispatch<SetStateAction<IProduct[] | null>>}>) {
+    function handleClick() {
+        const alreadyClicked = selectedProduct?.some(item => item.id === product.id);
+        if (!alreadyClicked) {
+            setSelectedProduct([...selectedProduct ?? [], product]);
+        }
+    }
     return (
-        <Card sx={{ width: 450, backgroundColor: 'primary.dark' }}>
+        <Card sx={{ width: 400, backgroundColor: 'primary.dark' }}>
             <CardMedia
                 sx={{ height: 140 }}
                 image="/hot-roll.jpg"
@@ -25,7 +36,7 @@ export default function ProductCard({product}: Readonly<{product: IProduct}>) {
                             }}
                         />
                         <Tooltip title="Adicionar ao carrinho">
-                            <IconButton>
+                            <IconButton onClick={() => handleClick()}>
                                 <AddShoppingCart sx={{ color: 'text.secondary' }}/>
                             </IconButton>
                         </Tooltip>

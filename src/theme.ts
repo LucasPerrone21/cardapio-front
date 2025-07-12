@@ -74,7 +74,7 @@ export default function theme(mode: 'dark' | 'light' = 'light') {
       },
       primary: {
         main: '#942911',
-        dark: '#016F6C',
+        dark: '#792f24',
         light: '#ACE9E7',
         contrastText: '#FEFEFE',
       },
@@ -86,12 +86,13 @@ export default function theme(mode: 'dark' | 'light' = 'light') {
       },
       secondary: {
         main: '#FF9F1C',
-        dark: '#253759',
+        dark: '#a4671c',
         light: '#57698C',
         contrastText: '#395182',
       },
       text: {
         primary: '#575B64',
+        secondary: '#FFFFFF',
       },
       divider: '#E1E2E7',
     },

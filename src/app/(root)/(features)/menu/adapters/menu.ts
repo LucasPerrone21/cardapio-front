@@ -1,5 +1,7 @@
-export async function getMenu(){
-    const res = await fetch(`${process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : ''}/menu`, { method: 'GET' })
-    const data = await res.json()
-    return data
+import { IProduct, IProductRequest } from "../interfaces/product.interfaces"
+
+export async function getMenu(): Promise<IProduct[]> {
+    const res = await fetch('/api/menu', { method: 'GET' })
+    const data: IProductRequest[] = await res.json()
+    return data.map((item) => ({ ...item, price: `R$ ${item.price.toFixed(2)}` }))
 }

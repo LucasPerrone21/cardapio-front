@@ -1,3 +1,4 @@
+import ReactQueryProvider from "@/providers/ReactQuery";
 import ThemeProvider from "@/providers/Theme";
 import { Grid } from "@mui/material";
 import type { Metadata } from "next";
@@ -14,12 +15,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="pt-BR">
       <body>
-        <ThemeProvider>
-          <Grid>{children}</Grid>
-        </ThemeProvider>
+        <ReactQueryProvider>
+          <ThemeProvider>
+            <Grid>{children}</Grid>
+          </ThemeProvider>
+        </ReactQueryProvider>
       </body>
     </html>
   );

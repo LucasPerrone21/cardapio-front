@@ -18,7 +18,7 @@ export default function ProductCard({
         <Card sx={{ width: 400, backgroundColor: 'primary.dark' }}>
             <CardMedia
                 sx={{ height: 140 }}
-                image="/hot-roll.jpg"
+                image={product.image}
                 title={product.name}
             />
             <CardContent>

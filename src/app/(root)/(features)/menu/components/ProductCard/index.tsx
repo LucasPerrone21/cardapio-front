@@ -11,8 +11,8 @@ export default function ProductCard({
     setSelectedProduct
 }: Readonly<{product: IProduct, selectedProduct: IProduct[] | null, setSelectedProduct: Dispatch<SetStateAction<IProduct[] | null>>}>) {
     const mutation = useMutation({
-        mutationFn: () => postOrder(product.id),
-        onSuccess: () => countBadge()
+        mutationFn: async () => await postOrder(product.id),
+        onSuccess: async () => countBadge()
     })
     function countBadge() {
         const alreadyClicked = selectedProduct?.some(item => item.id === product.id);

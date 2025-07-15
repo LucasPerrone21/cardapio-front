@@ -2,6 +2,7 @@ import ReactQueryProvider from "@/providers/ReactQuery";
 import ThemeProvider from "@/providers/Theme";
 import { Grid } from "@mui/material";
 import type { Metadata } from "next";
+import { ToastContainer } from "react-toastify";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -21,6 +22,7 @@ export default function RootLayout({
       <body>
         <ReactQueryProvider>
           <ThemeProvider>
+            <ToastContainer />
             <Grid>{children}</Grid>
           </ThemeProvider>
         </ReactQueryProvider>

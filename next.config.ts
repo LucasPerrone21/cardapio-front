@@ -1,4 +1,6 @@
+// import { config } from 'dotenv';
 import type { NextConfig } from "next";
+
 
 const nextConfig: NextConfig = {
   async redirects() {
@@ -9,7 +11,9 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
     ];
-  }
+  },
+  // env: process.env,
+  // reactStrictMode: true,
 };
 
 export default nextConfig;

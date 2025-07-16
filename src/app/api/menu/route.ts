@@ -1,6 +1,6 @@
 export async function GET(){
     try {
-        const res = await fetch('http://localhost:3000/menu', { method: 'GET' })
+        const res = await fetch(`${process.env.BASE_URL}/menu`, { method: 'GET' })
         const data = await res.json()
         return new Response(JSON.stringify(data), { status: 200 })
     } catch(err) {

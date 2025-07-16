@@ -6,10 +6,15 @@ export async function getMenu(): Promise<IProduct[]> {
     return data.map((item) => ({ ...item, price: `R$ ${item.price.toFixed(2)}` }))
 }
 
-export async function postOrder(productId: number){
+export async function postOrder(selectedProduct: IProduct[]){
     const res = await fetch('/api/order', { 
         method: 'POST', 
-        body: JSON.stringify({id: productId, count: 1})
+        body: JSON.stringify(
+            selectedProduct.map((item) => ({
+                id: item.id,
+                count: 1
+            }))
+        )
      })
 
     return res.status

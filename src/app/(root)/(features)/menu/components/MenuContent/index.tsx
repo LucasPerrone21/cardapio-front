@@ -29,7 +29,7 @@ export default function MenuContent() {
                     <ProductCard key={index} product={product} selectedProduct={selectedProduct} setSelectedProduct={setSelectedProduct}/>
                 ))}
             </Stack>
-            <CarBadge selectedProduct={selectedProduct} />
+            <CarBadge selectedProduct={selectedProduct} setSelectedProduct={setSelectedProduct}/>
         </Stack>
 
     )

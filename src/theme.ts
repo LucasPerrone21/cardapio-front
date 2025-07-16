@@ -190,6 +190,19 @@ export default function theme(mode: 'dark' | 'light' = 'light') {
               },
             },
           },
+          {
+            props: { variant: 'text' },
+            style: {
+              'fontWeight': 'bold',
+              'minWidth': '6rem',
+              'textTransform': 'none',
+              'backgroundColor': 'white',
+              '&:hover': {
+                backgroundColor: '#94291149',
+                color: '#792f24',
+              },
+            },
+          },
         ],
         styleOverrides: {
           root: {

@@ -1,9 +1,7 @@
 import { AddShoppingCart } from "@mui/icons-material";
 import { Card, CardContent, CardMedia, Chip, IconButton, Stack, Tooltip, Typography } from "@mui/material";
-import { useMutation } from "@tanstack/react-query";
 import { Dispatch, SetStateAction } from "react";
 import { toast } from "react-toastify";
-import { postOrder } from "../../adapters/menu";
 import { IProduct } from "../../interfaces/product.interfaces";
 
 export default function ProductCard({
@@ -11,10 +9,7 @@ export default function ProductCard({
     selectedProduct,
     setSelectedProduct
 }: Readonly<{product: IProduct, selectedProduct: IProduct[] | null, setSelectedProduct: Dispatch<SetStateAction<IProduct[] | null>>}>) {
-    const mutation = useMutation({
-        mutationFn: async () => await postOrder(product.id),
-        onSuccess: async () => countBadge()
-    })
+
     function countBadge() {
         const alreadyClicked = selectedProduct?.some(item => item.id === product.id);
         if (!alreadyClicked) {
@@ -52,7 +47,7 @@ export default function ProductCard({
                             }}
                         />
                         <Tooltip title="Adicionar ao carrinho">
-                            <IconButton onClick={() => mutation.mutate()}>
+                            <IconButton onClick={() => countBadge()}>
                                 <AddShoppingCart sx={{ color: 'text.secondary' }}/>
                             </IconButton>
                         </Tooltip>

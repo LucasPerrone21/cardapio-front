@@ -38,7 +38,7 @@ jobs:
           npm ci
           npm run coverage
       - name: Salvar cobertura
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: coverage
           path: coverage/
@@ -60,7 +60,7 @@ jobs:
           npm ci
           npm run build
       - name: Salvar build
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: next-build
           path: .next/ 

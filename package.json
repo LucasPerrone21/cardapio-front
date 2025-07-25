@@ -6,7 +6,9 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "echo \"Nenhum teste definido ainda\" && exit 0",
+    "coverage": "echo \"Nenhuma cobertura definida ainda\" && exit 0"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
